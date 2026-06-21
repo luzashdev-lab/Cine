@@ -1,7 +1,18 @@
 {
   "version": 2,
-  "updatedAt": "2026-06-21T14:11:21.873Z",
+  "updatedAt": "2026-06-21T14:11:50.871Z",
   "movies": [
+    {
+      "id": "mqnv7vzdd344k",
+      "tmdbId": 1008042,
+      "title": "La Main",
+      "year": "2023",
+      "poster": "https://image.tmdb.org/t/p/w500/yoZmZOIk35ZuH0WJoakB81ypHUH.jpg",
+      "synopsis": "Lorsqu'un groupe d'amis découvre comment conjurer les esprits à l'aide d'une mystérieuse main hantée, ils deviennent accros à ce nouveau frisson, et l’expérience fait le tour des réseaux sociaux. Une seule règle à respecter : ils ne doivent pas tenir la main plus de 90 secondes. Lorsque l’un d’entre eux l’enfreint, ils vont être rattrapés par les esprits, les obligeant à choisir : à qui se fier, aux morts ou aux vivants ?",
+      "tmdbRating": 3.6,
+      "addedAt": "2026-06-21T14:11:49.033Z",
+      "reviews": []
+    },
     {
       "id": "mqnuvstni0v6y",
       "tmdbId": 1390300,
