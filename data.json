@@ -1,9 +1,9 @@
 {
   "version": 2,
-  "updatedAt": "2026-06-21T14:13:00.369Z",
+  "updatedAt": "2026-06-21T14:13:05.984Z",
   "movies": [
     {
-      "id": "mqnv7wmxawaeg",
+      "id": "mqnv7vzdd344k",
       "tmdbId": 1008042,
       "title": "La Main",
       "year": "2023",
@@ -12,6 +12,13 @@
       "tmdbRating": 3.6,
       "addedAt": "2026-06-21T14:11:49.882Z",
       "reviews": [
+        {
+          "id": "mqnv9hurfmo12",
+          "rating": 2,
+          "author": "Anonyme",
+          "comment": "",
+          "date": "2026-06-21T14:13:04.035Z"
+        },
         {
           "id": "mqnv8gjlu8i3e",
           "rating": 1,
