@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-06-21T14:17:58.231Z",
+  "updatedAt": "2026-06-21T14:18:05.736Z",
   "movies": [
     {
       "id": "mqnvdl4rc3e5i",
@@ -32,6 +32,13 @@
       "addedAt": "2026-06-21T14:16:11.513Z",
       "reviews": [
         {
+          "id": "mqnvfx46w7nyo",
+          "rating": 3.5,
+          "author": "Anonyme",
+          "comment": "",
+          "date": "2026-06-21T14:18:03.750Z"
+        },
+        {
           "id": "mqnvdv4rsvcaa",
           "rating": 4,
           "author": "djkimix",
@@ -41,7 +48,7 @@
       ]
     },
     {
-      "id": "mqnvcrwcxep5b",
+      "id": "mqnvd04ftrg33",
       "tmdbId": 1430077,
       "title": "Hokum",
       "year": "2026",
@@ -67,7 +74,7 @@
       ]
     },
     {
-      "id": "mqnvbww5hdiaw",
+      "id": "mqnvbhwuxf44p",
       "tmdbId": 1008042,
       "title": "La Main",
       "year": "2023",
@@ -93,7 +100,7 @@
       ]
     },
     {
-      "id": "mqnv9tzxqmwq5",
+      "id": "mqnva16oj7zq9",
       "tmdbId": 9802,
       "title": "Rock",
       "year": "1996",
