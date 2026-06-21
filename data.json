@@ -1,9 +1,20 @@
 {
   "version": 2,
-  "updatedAt": "2026-06-21T14:19:45.182Z",
+  "updatedAt": "2026-06-21T14:19:49.882Z",
   "movies": [
     {
-      "id": "mqnvh8x7t4906",
+      "id": "mqnvi5lfjudn8",
+      "tmdbId": 670292,
+      "title": "The Creator",
+      "year": "2023",
+      "poster": "https://image.tmdb.org/t/p/w500/pP1cyoXFc5Br1Sg21uORSN49yyu.jpg",
+      "synopsis": "Alors qu'une future guerre entre la race humaine et l'intelligence artificielle fait rage, l'ancien agent des forces spéciales Joshua est recruté pour traquer et tuer le Créateur, l'insaisissable architecte de l'IA avancée.",
+      "tmdbRating": 3.5,
+      "addedAt": "2026-06-21T14:19:48.052Z",
+      "reviews": []
+    },
+    {
+      "id": "mqnvgqwafe7id",
       "tmdbId": 718821,
       "title": "Twisters",
       "year": "2024",
@@ -95,7 +106,7 @@
       ]
     },
     {
-      "id": "mqnvcrwcxep5b",
+      "id": "mqnvd04ftrg33",
       "tmdbId": 1430077,
       "title": "Hokum",
       "year": "2026",
@@ -121,7 +132,7 @@
       ]
     },
     {
-      "id": "mqnvbww5hdiaw",
+      "id": "mqnvbhwuxf44p",
       "tmdbId": 1008042,
       "title": "La Main",
       "year": "2023",
@@ -180,7 +191,7 @@
       ]
     },
     {
-      "id": "mqnujol44iqgz",
+      "id": "mqnuvstni0v6y",
       "tmdbId": 1390300,
       "title": "Over Your Dead Body",
       "year": "2026",
