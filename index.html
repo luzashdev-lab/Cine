@@ -666,21 +666,31 @@ document.getElementById("sync-now").addEventListener("click", () => {
 document.getElementById("sync-test").addEventListener("click", async () => {
   readPanelConfig();
   if (!syncCfg.token) { setSyncStatus("Collez d'abord un jeton dans le champ ci-dessus.", "err"); return; }
-  setSyncStatus("Test du jeton en cours…", "info");
+  setSyncStatus("Test du jeton (lecture + écriture réelle)…", "info");
+  const base = "https://api.github.com/repos/" + syncCfg.repo + "/contents/";
+  const probe = ".cine-sync-test";
+  const jsonHeaders = () => Object.assign({ "Content-Type": "application/json" }, ghHeaders());
   try {
-    const r = await fetch("https://api.github.com/repos/" + syncCfg.repo, { headers: ghHeaders() });
-    if (r.status === 401) { setSyncStatus("❌ Jeton invalide ou expiré (401). Recréez-en un.", "err"); return; }
-    if (r.status === 404) {
-      setSyncStatus("❌ Dépôt « " + syncCfg.repo + " » inaccessible. Vérifiez le nom ET que ce dépôt est bien coché dans « Repository access » du jeton.", "err");
-      return;
-    }
-    if (!r.ok) { setSyncStatus("❌ Erreur " + r.status + " pendant le test.", "err"); return; }
-    const data = await r.json();
-    if (data.permissions && data.permissions.push) {
-      setSyncStatus("✔ Jeton OK : écriture autorisée sur " + syncCfg.repo + ". Cliquez « Activer la synchro ».", "ok");
-    } else {
-      setSyncStatus("⚠ Jeton en LECTURE SEULE. Sur le jeton, mettez la permission « Contents » sur « Read and write », enregistrez, puis re-testez.", "err");
-    }
+    // 1) accès au dépôt
+    const rRepo = await fetch("https://api.github.com/repos/" + syncCfg.repo, { headers: ghHeaders() });
+    if (rRepo.status === 401) return setSyncStatus("❌ Jeton invalide ou expiré (401). Recréez-en un.", "err");
+    if (rRepo.status === 404) return setSyncStatus("❌ Dépôt « " + syncCfg.repo + " » inaccessible : non coché dans « Repository access » du jeton, ou nom erroné.", "err");
+    if (!rRepo.ok) return setSyncStatus("❌ Erreur " + rRepo.status + " pendant le test.", "err");
+    // 2) test d'écriture RÉEL : crée un petit fichier puis le supprime
+    let sha = null;
+    const g = await fetch(base + probe, { headers: ghHeaders() });
+    if (g.ok) sha = (await g.json()).sha;
+    const putBody = { message: "Test écriture Ciné-Notes", content: b64encode("ok " + new Date().toISOString()), branch: syncCfg.branch };
+    if (sha) putBody.sha = sha;
+    const put = await fetch(base + probe, { method: "PUT", headers: jsonHeaders(), body: JSON.stringify(putBody) });
+    if (put.status === 403) return setSyncStatus("❌ Écriture REFUSÉE (403). Le jeton est en lecture seule : passez la permission « Contents » sur « Read and write » (et non Read-only).", "err");
+    if (!put.ok) { let m = ""; try { m = (await put.json()).message || ""; } catch {} return setSyncStatus("❌ Écriture échouée " + put.status + (m ? " — " + m : ""), "err"); }
+    // nettoyage : on supprime le fichier de test
+    try {
+      const created = await put.json();
+      await fetch(base + probe, { method: "DELETE", headers: jsonHeaders(), body: JSON.stringify({ message: "Nettoyage test Ciné-Notes", sha: created.content.sha, branch: syncCfg.branch }) });
+    } catch {}
+    setSyncStatus("✔ Jeton OK : lecture ET écriture confirmées sur " + syncCfg.repo + ". Cliquez « Activer la synchro ».", "ok");
   } catch (e) { setSyncStatus("❌ Échec du test : " + e.message, "err"); }
 });
 
