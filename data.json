@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-06-21T23:17:00.700Z",
+  "updatedAt": "2026-06-21T23:17:19.247Z",
   "movies": [
     {
       "id": "mqoeo0fa132pc",
@@ -11,7 +11,15 @@
       "synopsis": "Six amis embauchent un médium pour faire une séance sur Zoom pendant le confinement, mais les choses tournent mal.",
       "tmdbRating": 3.3,
       "addedAt": "2026-06-21T23:16:13.991Z",
-      "reviews": []
+      "reviews": [
+        {
+          "id": "mqoepddlc63rh",
+          "rating": 2,
+          "author": "Miguel A",
+          "comment": "CHEAP",
+          "date": "2026-06-21T23:17:17.433Z"
+        }
+      ]
     },
     {
       "id": "mqnvkw0pbyjtv",
@@ -113,7 +121,7 @@
       ]
     },
     {
-      "id": "mqnvgqwafe7id",
+      "id": "mqnvh8x7t4906",
       "tmdbId": 718821,
       "title": "Twisters",
       "year": "2024",
@@ -226,7 +234,7 @@
       ]
     },
     {
-      "id": "mqnvd04ftrg33",
+      "id": "mqnvcrwcxep5b",
       "tmdbId": 1430077,
       "title": "Hokum",
       "year": "2026",
@@ -252,7 +260,7 @@
       ]
     },
     {
-      "id": "mqnvbhwuxf44p",
+      "id": "mqnvbww5hdiaw",
       "tmdbId": 1008042,
       "title": "La Main",
       "year": "2023",
@@ -311,7 +319,7 @@
       ]
     },
     {
-      "id": "mqnuvstni0v6y",
+      "id": "mqnujol44iqgz",
       "tmdbId": 1390300,
       "title": "Over Your Dead Body",
       "year": "2026",
