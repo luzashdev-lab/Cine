@@ -1,9 +1,9 @@
 {
   "version": 2,
-  "updatedAt": "2026-06-21T14:13:49.602Z",
+  "updatedAt": "2026-06-21T14:14:01.878Z",
   "movies": [
     {
-      "id": "mqnva16oj7zq9",
+      "id": "mqnv9tzxqmwq5",
       "tmdbId": 9802,
       "title": "Rock",
       "year": "1996",
@@ -12,6 +12,13 @@
       "tmdbRating": 3.6,
       "addedAt": "2026-06-21T14:13:29.088Z",
       "reviews": [
+        {
+          "id": "mqnvap1di3h7o",
+          "rating": 4,
+          "author": "djkimix",
+          "comment": "j'ai dormi dans l'hotel du film",
+          "date": "2026-06-21T14:14:00.001Z"
+        },
         {
           "id": "mqnvabmjcdkhr",
           "rating": 4.5,
