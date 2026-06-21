@@ -130,17 +130,24 @@
   }
   .delete-btn:hover { color: var(--err); }
 
-  .avg-row { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; flex-wrap: wrap; }
-  .avg-text { color: var(--muted); font-size: .9rem; }
-  .avg-text b { color: var(--accent); font-size: 1.05rem; }
-
-  /* Étoiles d'affichage (lecture seule) */
-  .stars-display { --pct: 0%; position: relative; display: inline-block; font-size: 1.4rem; line-height: 1; letter-spacing: 2px; }
-  .stars-display::before { content: "★★★★★"; color: #3a3f4d; }
-  .stars-display::after {
-    content: "★★★★★"; color: var(--accent); position: absolute; left: 0; top: 0;
-    width: var(--pct); overflow: hidden; white-space: nowrap;
-  }
+  /* Score "Rotten Tomatoes" (Tomatometer) */
+  .rt-score { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; flex-wrap: wrap; }
+  .rt-icon { display: block; flex-shrink: 0; }
+  .rt-icon.big { width: 52px; height: 52px; }
+  .rt-icon.mini { width: 16px; height: 16px; vertical-align: -3px; }
+  .rt-main { display: flex; flex-direction: column; line-height: 1.1; }
+  .rt-pct { font-size: 1.8rem; font-weight: 800; }
+  .rt-label { font-size: .85rem; font-weight: 700; letter-spacing: .5px; text-transform: uppercase; }
+  .rt-pct.fresh, .rt-label.fresh { color: #fa3f1d; }
+  .rt-pct.rotten, .rt-label.rotten { color: #54b948; }
+  .rt-pct.certified, .rt-label.certified { color: #f5c518; }
+  .rt-pct.none, .rt-label.none { color: var(--muted); }
+  .rt-sub { color: var(--muted); font-size: .85rem; }
+  .rt-sub b { color: var(--txt); }
+  .rt-chip { display: inline-flex; align-items: center; gap: 4px; font-size: .82rem; font-weight: 700;
+    padding: 2px 9px; border-radius: 999px; }
+  .rt-chip.fresh { color: #fa3f1d; background: rgba(250,63,29,.12); }
+  .rt-chip.rotten { color: #54b948; background: rgba(84,185,72,.12); }
 
   details.review-box { background: var(--bg2); border: 1px solid var(--border); border-radius: 10px; padding: 4px 14px; margin-bottom: 14px; }
   details.review-box summary { cursor: pointer; padding: 8px 0; font-weight: 600; }
@@ -168,7 +175,6 @@
   .review-head { display: flex; align-items: center; gap: 10px; margin-bottom: 6px; flex-wrap: wrap; }
   .review-head .who { font-weight: 600; }
   .review-head .when { color: var(--muted); font-size: .8rem; }
-  .review-head .stars-display { font-size: 1rem; }
   .review-text { margin: 0; line-height: 1.45; color: #c7ccd8; font-size: .92rem; white-space: pre-wrap; }
   .no-reviews { color: var(--muted); font-size: .88rem; font-style: italic; }
 </style>
@@ -336,13 +342,36 @@ const moviesEl = document.getElementById("movies");
 const emptyEl = document.getElementById("empty");
 const myCount = document.getElementById("my-count");
 
-function avgOf(movie) {
-  if (!movie.reviews.length) return null;
-  return movie.reviews.reduce((s, r) => s + r.rating, 0) / movie.reviews.length;
+/* --- Notation façon Rotten Tomatoes (Tomatometer) --- */
+const FRESH_THRESHOLD = 3.5; // un avis ≥ 3,5/5 est "frais"
+const ratingOf = (r) => (typeof r.rating === "number" ? r.rating : 0);
+const isFresh = (r) => ratingOf(r) >= FRESH_THRESHOLD;
+
+function tomatometer(movie) {
+  const revs = movie.reviews || [];
+  if (!revs.length) return { score: null, count: 0, fresh: false, certified: false, avg: null };
+  const freshCount = revs.filter(isFresh).length;
+  const score = Math.round((freshCount / revs.length) * 100);
+  const avg = revs.reduce((s, r) => s + ratingOf(r), 0) / revs.length;
+  return { score, count: revs.length, fresh: score >= 60, certified: score >= 75 && revs.length >= 5, avg };
 }
-function starsDisplay(value) {
-  const pct = Math.max(0, Math.min(100, (value / 5) * 100));
-  return `<span class="stars-display" style="--pct:${pct}%"></span>`;
+
+// Icône SVG : 'fresh' (tomate rouge), 'rotten' (éclaboussure verte), 'none' (tomate grise)
+function tomatoSVG(kind, cls = "") {
+  if (kind === "rotten") {
+    return `<svg class="rt-icon ${cls}" viewBox="0 0 64 64" aria-label="Pourri">
+      <path d="M32 4l5 11 11-7-3 13 13 1-9 9 11 7-13 3 5 12-12-6-3 12-7-10-8 9-2-13-12 4 6-11-12-3 11-7-8-9 13-1-3-12 11 6z" fill="#54b948"/>
+      <circle cx="26" cy="31" r="3" fill="#1c4f17"/><circle cx="38" cy="31" r="3" fill="#1c4f17"/>
+      <path d="M26 41q6 5 12 0" stroke="#1c4f17" stroke-width="2.4" fill="none" stroke-linecap="round"/></svg>`;
+  }
+  const body = kind === "none" ? "#7a8089" : "#fa3f1d";
+  const leaf = kind === "none" ? "#5d626b" : "#4ea63f";
+  let leaves = "";
+  for (let a = 0; a < 5; a++) leaves += `<ellipse cx="32" cy="11" rx="3" ry="8" fill="${leaf}" transform="rotate(${a * 72} 32 19)"/>`;
+  return `<svg class="rt-icon ${cls}" viewBox="0 0 64 64" aria-label="${kind === "none" ? "Non noté" : "Frais"}">
+    <circle cx="32" cy="38" r="21" fill="${body}"/>
+    <ellipse cx="25" cy="31" rx="6" ry="4" fill="#fff" opacity=".22"/>
+    ${leaves}<circle cx="32" cy="19" r="3.2" fill="${leaf}"/></svg>`;
 }
 function fmtDate(iso) {
   try { return new Date(iso).toLocaleDateString("fr-FR", { day: "2-digit", month: "short", year: "numeric" }); }
@@ -358,13 +387,17 @@ function render() {
   myCount.textContent = movies.length ? `(${movies.length})` : "";
 
   for (const movie of movies) {
-    const avg = avgOf(movie);
+    const tm = tomatometer(movie);
     const card = document.createElement("article");
     card.className = "movie-card";
 
     const metaParts = [];
     if (movie.year) metaParts.push(movie.year);
-    if (movie.tmdbRating != null) metaParts.push("Note du public : " + movie.tmdbRating + "/5");
+    if (movie.tmdbRating != null) metaParts.push("Note TMDB : " + movie.tmdbRating + "/5");
+
+    const rtKind = tm.score == null ? "none" : tm.fresh ? "fresh" : "rotten";
+    const rtLabel = tm.score == null ? "Pas encore noté" : tm.certified ? "Certified Fresh" : tm.fresh ? "Frais" : "Pourri";
+    const rtCls = tm.score == null ? "none" : tm.certified ? "certified" : tm.fresh ? "fresh" : "rotten";
 
     const posterHtml = movie.poster
       ? `<img class="poster" src="${escapeHtml(movie.poster)}" alt="Affiche de ${escapeHtml(movie.title)}"
@@ -379,11 +412,15 @@ function render() {
         <p class="movie-meta">${escapeHtml(metaParts.join(" · "))}</p>
         ${movie.synopsis ? `<p class="movie-synopsis">${escapeHtml(movie.synopsis)}</p>` : ""}
 
-        <div class="avg-row">
-          ${starsDisplay(avg || 0)}
-          <span class="avg-text">${avg != null
-            ? `<b>${avg.toFixed(1)}</b> / 5 — ${movie.reviews.length} avis`
-            : "Pas encore noté"}</span>
+        <div class="rt-score">
+          ${tomatoSVG(rtKind, "big")}
+          <div class="rt-main">
+            <span class="rt-pct ${rtCls}">${tm.score == null ? "– –" : tm.score + "%"}</span>
+            <span class="rt-label ${rtCls}">${rtLabel}</span>
+          </div>
+          <span class="rt-sub">${tm.count
+            ? "Note moyenne <b>" + tm.avg.toFixed(1) + "</b>/5 · " + tm.count + " avis"
+            : "Soyez le premier à voter"}</span>
         </div>
 
         <details class="review-box">
@@ -409,7 +446,7 @@ function render() {
               <div class="review">
                 <div class="review-head">
                   <span class="who">${escapeHtml(r.author)}</span>
-                  ${starsDisplay(r.rating)}
+                  <span class="rt-chip ${isFresh(r) ? "fresh" : "rotten"}">${tomatoSVG(isFresh(r) ? "fresh" : "rotten", "mini")} ${ratingOf(r)}/5</span>
                   <span class="when">${fmtDate(r.date)}</span>
                 </div>
                 ${r.comment ? `<p class="review-text">${escapeHtml(r.comment)}</p>` : ""}
