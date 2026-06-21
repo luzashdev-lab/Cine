@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-06-21T14:14:39.534Z",
+  "updatedAt": "2026-06-21T14:14:47.207Z",
   "movies": [
     {
       "id": "mqnvbhwuxf44p",
@@ -11,7 +11,15 @@
       "synopsis": "Lorsqu'un groupe d'amis découvre comment conjurer les esprits à l'aide d'une mystérieuse main hantée, ils deviennent accros à ce nouveau frisson, et l’expérience fait le tour des réseaux sociaux. Une seule règle à respecter : ils ne doivent pas tenir la main plus de 90 secondes. Lorsque l’un d’entre eux l’enfreint, ils vont être rattrapés par les esprits, les obligeant à choisir : à qui se fier, aux morts ou aux vivants ?",
       "tmdbRating": 3.6,
       "addedAt": "2026-06-21T14:14:37.422Z",
-      "reviews": []
+      "reviews": [
+        {
+          "id": "mqnvbo1n70edi",
+          "rating": 2,
+          "author": "Anonyme",
+          "comment": "",
+          "date": "2026-06-21T14:14:45.371Z"
+        }
+      ]
     },
     {
       "id": "mqnva16oj7zq9",
