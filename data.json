@@ -1,7 +1,18 @@
 {
   "version": 2,
-  "updatedAt": "2026-06-21T14:21:40.647Z",
+  "updatedAt": "2026-06-21T14:21:50.515Z",
   "movies": [
+    {
+      "id": "mqnvkqol7mf9k",
+      "tmdbId": 331836,
+      "title": "Babysitting 2",
+      "year": "2015",
+      "poster": "https://image.tmdb.org/t/p/w500/aZ7JWKenzR28H4bCgFJwdCuHovW.jpg",
+      "synopsis": "Franck, Sonia, Sam, Ernest, Alex et Estelle s’envolent pour le Brésil. Ils se rendent en vacances à l’hôtel d’Alain, le père de Sonia. Franck va profiter de ce voyage entre amis pour la demander en mariage. À l’hôtel, ils sont accueillis par Alain et Yolande, la grand-mère acariâtre de Sonia. Les garçons organisent une excursion dans la jungle avec un guide chevronné. Alain leur confie Yolande de peur qu’elle ne trouble le processus de remise du « label éco VWF ». Le soir, les garçons ne sont pas revenus. Ils ont disparu avec la grand-mère et le guide. Le lendemain matin, la caméra GoPro avec laquelle ils étaient partis est retrouvée…",
+      "tmdbRating": 3.2,
+      "addedAt": "2026-06-21T14:21:48.693Z",
+      "reviews": []
+    },
     {
       "id": "mqnvi5lfjudn8",
       "tmdbId": 670292,
