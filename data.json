@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-06-21T14:19:49.882Z",
+  "updatedAt": "2026-06-21T14:20:27.955Z",
   "movies": [
     {
       "id": "mqnvi5lfjudn8",
@@ -11,7 +11,15 @@
       "synopsis": "Alors qu'une future guerre entre la race humaine et l'intelligence artificielle fait rage, l'ancien agent des forces spéciales Joshua est recruté pour traquer et tuer le Créateur, l'insaisissable architecte de l'IA avancée.",
       "tmdbRating": 3.5,
       "addedAt": "2026-06-21T14:19:48.052Z",
-      "reviews": []
+      "reviews": [
+        {
+          "id": "mqnviytpw9efo",
+          "rating": 3,
+          "author": "Anonyme",
+          "comment": "",
+          "date": "2026-06-21T14:20:25.933Z"
+        }
+      ]
     },
     {
       "id": "mqnvgqwafe7id",
