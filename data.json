@@ -1,7 +1,18 @@
 {
   "version": 2,
-  "updatedAt": "2026-06-21T14:18:47.864Z",
+  "updatedAt": "2026-06-21T14:19:07.557Z",
   "movies": [
+    {
+      "id": "mqnvh8x7t4906",
+      "tmdbId": 718821,
+      "title": "Twisters",
+      "year": "2024",
+      "poster": "https://image.tmdb.org/t/p/w500/bgyrB7OmVBmqdVxFXjCmh4Q30Ju.jpg",
+      "synopsis": "Ancienne chasseuse de tornades, Kate est encore traumatisée par sa confrontation avec une tornade lorsqu'elle était étudiante. Désormais, elle préfère étudier le comportement des tempêtes en toute sécurité depuis New York. Mais lorsque son ami Javi lui demande de tester un nouveau détecteur de tornades, elle accepte de retourner au cœur de l'action. Elle rencontre alors le charmant et téméraire Tyler Owens, célèbre pour ses vidéos de chasse aux tornades postées sur les réseaux sociaux.",
+      "tmdbRating": 3.4,
+      "addedAt": "2026-06-21T14:19:05.707Z",
+      "reviews": []
+    },
     {
       "id": "mqnvdl4rc3e5i",
       "tmdbId": 490132,
