@@ -58,6 +58,29 @@
   .msg.err { color: var(--err); }
   .msg.ok  { color: var(--ok); }
   .msg.info{ color: var(--muted); }
+  .btn.ghost { background: transparent; border: 1px solid var(--border); color: var(--txt); font-weight: 500; }
+  .btn.ghost:hover { border-color: var(--accent); filter: none; }
+
+  /* Panneau de synchronisation GitHub */
+  .sync-panel {
+    max-width: 720px; margin: 16px auto 0; text-align: left;
+    background: var(--bg2); border: 1px solid var(--border); border-radius: 12px; padding: 6px 16px;
+  }
+  .sync-panel > summary { cursor: pointer; padding: 8px 0; font-weight: 600; list-style: none; display: flex; align-items: center; gap: 8px; }
+  .sync-panel > summary::-webkit-details-marker { display: none; }
+  .sync-badge { width: 9px; height: 9px; border-radius: 50%; background: #555; display: inline-block; }
+  .sync-badge.on  { background: var(--ok); box-shadow: 0 0 6px var(--ok); }
+  .sync-badge.err { background: var(--err); }
+  .sync-badge.busy{ background: var(--accent); animation: pulse 1s infinite; }
+  @keyframes pulse { 50% { opacity: .35; } }
+  .sync-body { padding: 6px 0 14px; display: flex; flex-direction: column; gap: 12px; }
+  .sync-body .field input { padding: 9px 12px; border-radius: 8px; border: 1px solid var(--border);
+    background: var(--card); color: var(--txt); font-size: .92rem; font-family: inherit; width: 100%; }
+  .sync-actions { display: flex; flex-wrap: wrap; gap: 8px; }
+  .sync-status { font-size: .88rem; margin: 0; color: var(--muted); }
+  .sync-status.ok { color: var(--ok); } .sync-status.err { color: var(--err); } .sync-status.info { color: var(--accent); }
+  .sync-help { font-size: .8rem; color: var(--muted); margin: 0; line-height: 1.5; }
+  .sync-help code, .sync-help i { color: #c7ccd8; }
 
   main { max-width: 1000px; margin: 0 auto; padding: 26px 18px 80px; }
   .section-title {
@@ -159,6 +182,26 @@
       <button type="submit" class="btn" id="search-btn">Rechercher</button>
     </form>
     <p id="search-msg" class="msg" role="status"></p>
+
+    <details class="sync-panel" id="sync-panel">
+      <summary><span class="sync-badge" id="sync-badge"></span> ☁️ Sauvegarde &amp; synchronisation GitHub</summary>
+      <div class="sync-body">
+        <p class="sync-help">Vos films et avis sont sauvegardés dans le fichier <code>data.json</code> du dépôt GitHub et synchronisés automatiquement entre vos appareils. La lecture marche sans jeton ; l'écriture automatique nécessite un jeton.</p>
+        <label class="field"><span style="font-size:.85rem;color:var(--muted)">Dépôt GitHub (propriétaire/nom)</span>
+          <input type="text" id="sync-repo" placeholder="luzashdev-lab/Cine" autocomplete="off" /></label>
+        <label class="field"><span style="font-size:.85rem;color:var(--muted)">Jeton d'accès (fine-grained, permission « Contents : Read and write »)</span>
+          <input type="password" id="sync-token" placeholder="github_pat_… (laisser vide = lecture seule)" autocomplete="off" /></label>
+        <div class="sync-actions">
+          <button type="button" class="btn small" id="sync-enable">Activer la synchro</button>
+          <button type="button" class="btn small ghost" id="sync-now">Synchroniser maintenant</button>
+          <button type="button" class="btn small ghost" id="sync-export">Exporter .json</button>
+          <button type="button" class="btn small ghost" id="sync-import">Importer .json</button>
+          <input type="file" id="sync-file" accept="application/json,.json" style="display:none" />
+        </div>
+        <p class="sync-status" id="sync-status">Synchro désactivée.</p>
+        <p class="sync-help">🔒 Le jeton reste <b>uniquement dans ce navigateur</b> (jamais publié dans le code). Créez-en un sur <i>github.com/settings/personal-access-tokens</i> → « Fine-grained token » → limité au dépôt <i>Cine</i> → permission <i>Contents: Read and write</i>.</p>
+      </div>
+    </details>
   </header>
 
   <main>
@@ -277,8 +320,12 @@ function addMovie(data) {
     addedAt: new Date().toISOString(),
     reviews: [],
   });
+  // un film ré-ajouté annule son éventuelle suppression précédente
+  const k = keyOf(movies[0]);
+  if (deletedIds[k]) { delete deletedIds[k]; saveDeleted(deletedIds); }
   saveMovies(movies);
   render();
+  scheduleSync();
 }
 
 /* =========================================================================
@@ -372,9 +419,12 @@ function render() {
 
     card.querySelector(".delete-btn").addEventListener("click", () => {
       if (confirm("Retirer « " + movie.title + " » et tous ses avis ?")) {
+        deletedIds[keyOf(movie)] = new Date().toISOString(); // pierre tombale (propage la suppression)
+        saveDeleted(deletedIds);
         movies = movies.filter(m => m.id !== movie.id);
         saveMovies(movies);
         render();
+        scheduleSync();
         // réactive le bouton "Ajouter" dans les résultats si présent
         if (searchInput.value.trim()) searchForm.requestSubmit?.();
       }
@@ -398,6 +448,7 @@ function render() {
       movie.reviews.unshift({ id: uid(), rating, author, comment, date: new Date().toISOString() });
       saveMovies(movies);
       render();
+      scheduleSync();
     });
 
     moviesEl.appendChild(card);
@@ -439,7 +490,208 @@ function buildStarInput(container, hint) {
   paint(Number(container.dataset.rating) || 0);
 }
 
+/* =========================================================================
+   SAUVEGARDE & SYNCHRONISATION GITHUB
+   - data.json dans le dépôt = source partagée entre vos appareils
+   - tirage (pull) au chargement + poussée (push) auto après chaque modif
+   - fusion sans perte : union des films (par tmdbId) et des avis (par id) ;
+     les suppressions se propagent via des "pierres tombales" horodatées.
+   ========================================================================= */
+const SYNC_KEY = "cine-notes-sync";
+const DELETED_KEY = "cine-notes-deleted";
+
+function loadSyncCfg() { try { return JSON.parse(localStorage.getItem(SYNC_KEY)) || {}; } catch { return {}; } }
+function saveSyncCfg() { localStorage.setItem(SYNC_KEY, JSON.stringify(syncCfg)); }
+let syncCfg = Object.assign(
+  { repo: "luzashdev-lab/Cine", path: "data.json", branch: "main", token: "", enabled: false },
+  loadSyncCfg()
+);
+
+function loadDeleted() { try { return JSON.parse(localStorage.getItem(DELETED_KEY)) || {}; } catch { return {}; } }
+function saveDeleted(d) { localStorage.setItem(DELETED_KEY, JSON.stringify(d)); }
+let deletedIds = loadDeleted();
+
+const keyOf = (m) => (m.tmdbId ? "t" + m.tmdbId : "i" + m.id);
+const maxIso = (a, b) => ((a || "") > (b || "") ? (a || "") : (b || ""));
+const b64encode = (s) => btoa(unescape(encodeURIComponent(s)));
+const b64decode = (b) => decodeURIComponent(escape(atob(b)));
+
+function localDoc() { return { version: 2, updatedAt: new Date().toISOString(), movies, deletedIds }; }
+
+function mergeMovie(a, b) {
+  const reviews = new Map();
+  for (const r of [...(a.reviews || []), ...(b.reviews || [])]) if (r && r.id) reviews.set(r.id, r);
+  const m = Object.assign({}, b, a);
+  m.poster = a.poster || b.poster || null;
+  m.synopsis = a.synopsis || b.synopsis || null;
+  m.year = a.year || b.year || null;
+  m.tmdbRating = a.tmdbRating ?? b.tmdbRating ?? null;
+  m.addedAt = maxIso(a.addedAt, b.addedAt);
+  m.reviews = [...reviews.values()].sort((x, y) => (y.date || "").localeCompare(x.date || ""));
+  return m;
+}
+
+function mergeDocs(a, b) {
+  const tomb = {};
+  for (const src of [a, b])
+    for (const [k, t] of Object.entries(src.deletedIds || {})) if (!tomb[k] || t > tomb[k]) tomb[k] = t;
+  const byKey = new Map();
+  for (const src of [a, b])
+    for (const m of src.movies || []) {
+      if (!m || !m.title) continue;
+      const k = keyOf(m);
+      byKey.set(k, byKey.has(k) ? mergeMovie(byKey.get(k), m) : m);
+    }
+  const out = [];
+  for (const [k, m] of byKey) {
+    const del = tomb[k];
+    if (del && del >= (m.addedAt || "")) continue; // supprimé après son ajout → reste supprimé
+    out.push(m);
+  }
+  out.sort((x, y) => (y.addedAt || "").localeCompare(x.addedAt || ""));
+  for (const m of out) { const k = keyOf(m); if (tomb[k] && (m.addedAt || "") > tomb[k]) delete tomb[k]; }
+  return { version: 2, updatedAt: maxIso(a.updatedAt, b.updatedAt), movies: out, deletedIds: tomb };
+}
+
+/* --- API GitHub --- */
+const ghUrl = () => `https://api.github.com/repos/${syncCfg.repo}/contents/${syncCfg.path}`;
+function ghHeaders() {
+  const h = { Accept: "application/vnd.github+json", "X-GitHub-Api-Version": "2022-11-28" };
+  if (syncCfg.token) h.Authorization = "Bearer " + syncCfg.token;
+  return h;
+}
+
+async function pullRemote() {
+  const url = ghUrl() + "?ref=" + encodeURIComponent(syncCfg.branch) + "&_=" + new Date().getTime();
+  const r = await fetch(url, { headers: ghHeaders() });
+  if (r.status === 404) return { doc: { movies: [], deletedIds: {}, updatedAt: "" }, sha: null };
+  if (!r.ok) throw new Error("lecture GitHub " + r.status);
+  const data = await r.json();
+  let doc;
+  try { doc = JSON.parse(b64decode((data.content || "").replace(/\n/g, ""))); }
+  catch { doc = { movies: [], deletedIds: {} }; }
+  if (!Array.isArray(doc.movies)) doc.movies = [];
+  if (!doc.deletedIds) doc.deletedIds = {};
+  return { doc, sha: data.sha };
+}
+
+async function pushRemote(doc, sha) {
+  const body = { message: "Sauvegarde Ciné-Notes", content: b64encode(JSON.stringify(doc, null, 2)), branch: syncCfg.branch };
+  if (sha) body.sha = sha;
+  const r = await fetch(ghUrl(), {
+    method: "PUT",
+    headers: Object.assign({ "Content-Type": "application/json" }, ghHeaders()),
+    body: JSON.stringify(body),
+  });
+  if (!r.ok) {
+    let detail = ""; try { detail = (await r.json()).message || ""; } catch {}
+    throw new Error("écriture GitHub " + r.status + (detail ? " — " + detail : ""));
+  }
+}
+
+/* --- Orchestration --- */
+let syncing = false, pending = false, syncTimer = null;
+
+function setSyncStatus(text, cls) {
+  const el = document.getElementById("sync-status");
+  if (el) { el.textContent = text; el.className = "sync-status " + (cls || ""); }
+  const badge = document.getElementById("sync-badge");
+  if (badge) badge.className = "sync-badge " + (cls === "err" ? "err" : cls === "info" ? "busy" : syncCfg.enabled ? "on" : "");
+}
+
+async function doSync() {
+  if (!syncCfg.enabled) return;
+  if (syncing) { pending = true; return; }
+  syncing = true;
+  setSyncStatus("Synchronisation…", "info");
+  try {
+    const { doc: remote, sha } = await pullRemote();
+    const before = JSON.stringify(movies) + JSON.stringify(deletedIds);
+    const merged = mergeDocs(localDoc(), remote);
+    movies = merged.movies;
+    deletedIds = merged.deletedIds;
+    saveMovies(movies);
+    saveDeleted(deletedIds);
+    if (JSON.stringify(movies) + JSON.stringify(deletedIds) !== before) render();
+    if (syncCfg.token) {
+      await pushRemote(merged, sha);
+      setSyncStatus("Sauvegardé sur GitHub ✔  " + new Date().toLocaleTimeString("fr-FR"), "ok");
+    } else {
+      setSyncStatus("Films récupérés depuis GitHub (lecture seule — aucun jeton).", "ok");
+    }
+  } catch (e) {
+    setSyncStatus("Erreur : " + e.message, "err");
+  } finally {
+    syncing = false;
+    if (pending) { pending = false; scheduleSync(); }
+  }
+}
+
+function scheduleSync() {
+  if (!syncCfg.enabled || !syncCfg.token) return; // sans jeton : pas d'écriture automatique
+  clearTimeout(syncTimer);
+  syncTimer = setTimeout(doSync, 1500);
+}
+
+/* --- Panneau de réglages --- */
+const $repo = document.getElementById("sync-repo");
+const $token = document.getElementById("sync-token");
+$repo.value = syncCfg.repo;
+$token.value = syncCfg.token;
+setSyncStatus(syncCfg.enabled ? "Synchro active." : "Synchro désactivée.", syncCfg.enabled ? "ok" : "");
+
+function readPanelConfig() {
+  syncCfg.repo = ($repo.value.trim() || "luzashdev-lab/Cine")
+    .replace(/^https?:\/\/github\.com\//i, "").replace(/\.git$/i, "").replace(/\/$/, "");
+  syncCfg.token = $token.value.trim();
+}
+
+document.getElementById("sync-enable").addEventListener("click", () => {
+  readPanelConfig();
+  syncCfg.enabled = true;
+  saveSyncCfg();
+  $repo.value = syncCfg.repo;
+  setSyncStatus("Synchro activée — première synchronisation…", "info");
+  doSync();
+});
+
+document.getElementById("sync-now").addEventListener("click", () => {
+  readPanelConfig();
+  syncCfg.enabled = true;
+  saveSyncCfg();
+  doSync();
+});
+
+document.getElementById("sync-export").addEventListener("click", () => {
+  const blob = new Blob([JSON.stringify(localDoc(), null, 2)], { type: "application/json" });
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = "cine-notes-sauvegarde.json";
+  a.click();
+  URL.revokeObjectURL(a.href);
+});
+
+document.getElementById("sync-import").addEventListener("click", () => document.getElementById("sync-file").click());
+document.getElementById("sync-file").addEventListener("change", (e) => {
+  const file = e.target.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = () => {
+    try {
+      const doc = JSON.parse(reader.result);
+      const merged = mergeDocs(localDoc(), { movies: doc.movies || [], deletedIds: doc.deletedIds || {}, updatedAt: doc.updatedAt || "" });
+      movies = merged.movies; deletedIds = merged.deletedIds;
+      saveMovies(movies); saveDeleted(deletedIds); render();
+      setSyncStatus("Sauvegarde importée et fusionnée ✔", "ok");
+      scheduleSync();
+    } catch (err) { setSyncStatus("Fichier invalide : " + err.message, "err"); }
+  };
+  reader.readAsText(file);
+  e.target.value = "";
+});
+
 render();
+if (syncCfg.enabled) doSync();
 </script>
 </body>
 </html>
