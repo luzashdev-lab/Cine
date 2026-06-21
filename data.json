@@ -1,7 +1,18 @@
 {
   "version": 2,
-  "updatedAt": "2026-06-21T23:16:03.990Z",
+  "updatedAt": "2026-06-21T23:16:15.831Z",
   "movies": [
+    {
+      "id": "mqoeo0fa132pc",
+      "tmdbId": 723072,
+      "title": "Host",
+      "year": "2020",
+      "poster": "https://image.tmdb.org/t/p/w500/h7dZpJDORYs5c56dydbrLFkEXpE.jpg",
+      "synopsis": "Six amis embauchent un médium pour faire une séance sur Zoom pendant le confinement, mais les choses tournent mal.",
+      "tmdbRating": 3.3,
+      "addedAt": "2026-06-21T23:16:13.991Z",
+      "reviews": []
+    },
     {
       "id": "mqnvkw0pbyjtv",
       "tmdbId": 120467,
