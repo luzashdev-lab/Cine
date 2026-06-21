@@ -1,16 +1,16 @@
 {
   "version": 2,
-  "updatedAt": "2026-06-21T14:14:47.207Z",
+  "updatedAt": "2026-06-21T14:14:58.721Z",
   "movies": [
     {
-      "id": "mqnvbhwuxf44p",
+      "id": "mqnvbww5hdiaw",
       "tmdbId": 1008042,
       "title": "La Main",
       "year": "2023",
       "poster": "https://image.tmdb.org/t/p/w500/yoZmZOIk35ZuH0WJoakB81ypHUH.jpg",
       "synopsis": "Lorsqu'un groupe d'amis découvre comment conjurer les esprits à l'aide d'une mystérieuse main hantée, ils deviennent accros à ce nouveau frisson, et l’expérience fait le tour des réseaux sociaux. Une seule règle à respecter : ils ne doivent pas tenir la main plus de 90 secondes. Lorsque l’un d’entre eux l’enfreint, ils vont être rattrapés par les esprits, les obligeant à choisir : à qui se fier, aux morts ou aux vivants ?",
       "tmdbRating": 3.6,
-      "addedAt": "2026-06-21T14:14:37.422Z",
+      "addedAt": "2026-06-21T14:14:56.837Z",
       "reviews": [
         {
           "id": "mqnvbo1n70edi",
@@ -22,7 +22,7 @@
       ]
     },
     {
-      "id": "mqnva16oj7zq9",
+      "id": "mqnv9tzxqmwq5",
       "tmdbId": 9802,
       "title": "Rock",
       "year": "1996",
@@ -48,7 +48,7 @@
       ]
     },
     {
-      "id": "mqnuvstni0v6y",
+      "id": "mqnujol44iqgz",
       "tmdbId": 1390300,
       "title": "Over Your Dead Body",
       "year": "2026",
