@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-06-21T14:11:51.782Z",
+  "updatedAt": "2026-06-21T14:12:04.259Z",
   "movies": [
     {
       "id": "mqnv7wmxawaeg",
@@ -23,6 +23,13 @@
       "tmdbRating": 3.3,
       "addedAt": "2026-06-21T14:02:25.067Z",
       "reviews": [
+        {
+          "id": "mqnv86bewhy2n",
+          "rating": 1.5,
+          "author": "Miguel A.",
+          "comment": "Une œuvre dont l’ambition dépasse tragiquement l’exécution",
+          "date": "2026-06-21T14:12:02.426Z"
+        },
         {
           "id": "mqnuwkf1jfg4k",
           "rating": 1,
