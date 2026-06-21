@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-06-21T14:13:21.935Z",
+  "updatedAt": "2026-06-21T14:13:28.280Z",
   "movies": [
     {
       "id": "mqnv9tzxqmwq5",
@@ -14,33 +14,7 @@
       "reviews": []
     },
     {
-      "id": "mqnv7wmxawaeg",
-      "tmdbId": 1008042,
-      "title": "La Main",
-      "year": "2023",
-      "poster": "https://image.tmdb.org/t/p/w500/yoZmZOIk35ZuH0WJoakB81ypHUH.jpg",
-      "synopsis": "Lorsqu'un groupe d'amis découvre comment conjurer les esprits à l'aide d'une mystérieuse main hantée, ils deviennent accros à ce nouveau frisson, et l’expérience fait le tour des réseaux sociaux. Une seule règle à respecter : ils ne doivent pas tenir la main plus de 90 secondes. Lorsque l’un d’entre eux l’enfreint, ils vont être rattrapés par les esprits, les obligeant à choisir : à qui se fier, aux morts ou aux vivants ?",
-      "tmdbRating": 3.6,
-      "addedAt": "2026-06-21T14:11:49.882Z",
-      "reviews": [
-        {
-          "id": "mqnv9hurfmo12",
-          "rating": 2,
-          "author": "Anonyme",
-          "comment": "",
-          "date": "2026-06-21T14:13:04.035Z"
-        },
-        {
-          "id": "mqnv8gjlu8i3e",
-          "rating": 1,
-          "author": "soizic",
-          "comment": "",
-          "date": "2026-06-21T14:12:15.681Z"
-        }
-      ]
-    },
-    {
-      "id": "mqnujol44iqgz",
+      "id": "mqnuvstni0v6y",
       "tmdbId": 1390300,
       "title": "Over Your Dead Body",
       "year": "2026",
@@ -81,6 +55,7 @@
     }
   ],
   "deletedIds": {
-    "t11": "2026-06-21T14:11:20.031Z"
+    "t11": "2026-06-21T14:11:20.031Z",
+    "t1008042": "2026-06-21T14:13:26.443Z"
   }
 }
