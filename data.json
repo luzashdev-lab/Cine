@@ -1,7 +1,26 @@
 {
   "version": 2,
-  "updatedAt": "2026-06-21T14:16:48.963Z",
+  "updatedAt": "2026-06-21T14:17:35.460Z",
   "movies": [
+    {
+      "id": "mqnvdl4rc3e5i",
+      "tmdbId": 490132,
+      "title": "Green Book : Sur les routes du Sud",
+      "year": "2018",
+      "poster": "https://image.tmdb.org/t/p/w500/orN43xQQkoAmbUx1tYZl6HY7WKU.jpg",
+      "synopsis": "En 1962, alors que règne la ségrégation, Tony Lip, un videur italo-américain du Bronx, est engagé pour conduire et protéger le Dr Don Shirley, un pianiste noir de renommée mondiale, lors d’une tournée de concerts. Durant leur périple de Manhattan jusqu’au Sud profond, ils s’appuient sur le Green Book pour dénicher les établissements accueillant les personnes de couleur, où l’on ne refusera pas de servir Shirley et où il ne sera ni humilié ni maltraité. Dans un pays où le mouvement des droits civiques commence à se faire entendre, les deux hommes vont être confrontés au pire de l’âme humaine, dont ils se guérissent grâce à leur générosité et leur humour. Ensemble, ils vont devoir dépasser leurs préjugés, oublier ce qu’ils considéraient comme des différences insurmontables, pour découvrir leur humanité commune.",
+      "tmdbRating": 4.1,
+      "addedAt": "2026-06-21T14:16:14.907Z",
+      "reviews": [
+        {
+          "id": "mqnvf9tssk7oi",
+          "rating": 4.5,
+          "author": "soizic",
+          "comment": "beau film , élégant tant dans les sentiments que dans l'execution",
+          "date": "2026-06-21T14:17:33.568Z"
+        }
+      ]
+    },
     {
       "id": "mqnvdiih8y5gk",
       "tmdbId": 324786,
@@ -100,7 +119,7 @@
       ]
     },
     {
-      "id": "mqnuvstni0v6y",
+      "id": "mqnujol44iqgz",
       "tmdbId": 1390300,
       "title": "Over Your Dead Body",
       "year": "2026",
