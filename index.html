@@ -193,6 +193,7 @@
           <input type="password" id="sync-token" placeholder="github_pat_… (laisser vide = lecture seule)" autocomplete="off" /></label>
         <div class="sync-actions">
           <button type="button" class="btn small" id="sync-enable">Activer la synchro</button>
+          <button type="button" class="btn small ghost" id="sync-test">Tester le jeton</button>
           <button type="button" class="btn small ghost" id="sync-now">Synchroniser maintenant</button>
           <button type="button" class="btn small ghost" id="sync-export">Exporter .json</button>
           <button type="button" class="btn small ghost" id="sync-import">Importer .json</button>
@@ -660,6 +661,27 @@ document.getElementById("sync-now").addEventListener("click", () => {
   syncCfg.enabled = true;
   saveSyncCfg();
   doSync();
+});
+
+document.getElementById("sync-test").addEventListener("click", async () => {
+  readPanelConfig();
+  if (!syncCfg.token) { setSyncStatus("Collez d'abord un jeton dans le champ ci-dessus.", "err"); return; }
+  setSyncStatus("Test du jeton en cours…", "info");
+  try {
+    const r = await fetch("https://api.github.com/repos/" + syncCfg.repo, { headers: ghHeaders() });
+    if (r.status === 401) { setSyncStatus("❌ Jeton invalide ou expiré (401). Recréez-en un.", "err"); return; }
+    if (r.status === 404) {
+      setSyncStatus("❌ Dépôt « " + syncCfg.repo + " » inaccessible. Vérifiez le nom ET que ce dépôt est bien coché dans « Repository access » du jeton.", "err");
+      return;
+    }
+    if (!r.ok) { setSyncStatus("❌ Erreur " + r.status + " pendant le test.", "err"); return; }
+    const data = await r.json();
+    if (data.permissions && data.permissions.push) {
+      setSyncStatus("✔ Jeton OK : écriture autorisée sur " + syncCfg.repo + ". Cliquez « Activer la synchro ».", "ok");
+    } else {
+      setSyncStatus("⚠ Jeton en LECTURE SEULE. Sur le jeton, mettez la permission « Contents » sur « Read and write », enregistrez, puis re-testez.", "err");
+    }
+  } catch (e) { setSyncStatus("❌ Échec du test : " + e.message, "err"); }
 });
 
 document.getElementById("sync-export").addEventListener("click", () => {
