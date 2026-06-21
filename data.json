@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-06-21T14:22:21.443Z",
+  "updatedAt": "2026-06-21T14:22:27.615Z",
   "movies": [
     {
       "id": "mqnvkw0pbyjtv",
@@ -30,10 +30,18 @@
       "synopsis": "Franck, Sonia, Sam, Ernest, Alex et Estelle s’envolent pour le Brésil. Ils se rendent en vacances à l’hôtel d’Alain, le père de Sonia. Franck va profiter de ce voyage entre amis pour la demander en mariage. À l’hôtel, ils sont accueillis par Alain et Yolande, la grand-mère acariâtre de Sonia. Les garçons organisent une excursion dans la jungle avec un guide chevronné. Alain leur confie Yolande de peur qu’elle ne trouble le processus de remise du « label éco VWF ». Le soir, les garçons ne sont pas revenus. Ils ont disparu avec la grand-mère et le guide. Le lendemain matin, la caméra GoPro avec laquelle ils étaient partis est retrouvée…",
       "tmdbRating": 3.2,
       "addedAt": "2026-06-21T14:21:48.693Z",
-      "reviews": []
+      "reviews": [
+        {
+          "id": "mqnvljb2xbzld",
+          "rating": 3,
+          "author": "soizic",
+          "comment": "",
+          "date": "2026-06-21T14:22:25.790Z"
+        }
+      ]
     },
     {
-      "id": "mqnvi5lfjudn8",
+      "id": "mqnvjvtfgx9hi",
       "tmdbId": 670292,
       "title": "The Creator",
       "year": "2023",
@@ -250,7 +258,7 @@
       ]
     },
     {
-      "id": "mqnuvstni0v6y",
+      "id": "mqnujol44iqgz",
       "tmdbId": 1390300,
       "title": "Over Your Dead Body",
       "year": "2026",
