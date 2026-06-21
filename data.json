@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-06-21T14:14:58.721Z",
+  "updatedAt": "2026-06-21T14:15:10.164Z",
   "movies": [
     {
       "id": "mqnvbww5hdiaw",
@@ -12,6 +12,13 @@
       "tmdbRating": 3.6,
       "addedAt": "2026-06-21T14:14:56.837Z",
       "reviews": [
+        {
+          "id": "mqnvc5rns1wxx",
+          "rating": 2,
+          "author": "Anonyme",
+          "comment": "",
+          "date": "2026-06-21T14:15:08.339Z"
+        },
         {
           "id": "mqnvbo1n70edi",
           "rating": 2,
