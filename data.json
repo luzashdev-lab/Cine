@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-06-22T21:05:58.273Z",
+  "updatedAt": "2026-06-22T21:06:16.670Z",
   "movies": [
     {
       "id": "mqppgb02r7va7",
@@ -11,7 +11,15 @@
       "synopsis": "Ellison est un auteur de romans policiers inspirés de faits réels. Dans l’espoir d’écrire un nouveau livre à succès, il emménage avec sa famille dans une maison où les anciens propriétaires ont été retrouvés inexplicablement pendus. Ellison y découvre dans le grenier des bobines 8mm contenant les images de meurtres d’autres familles. Qui a filmé ces tueries et pour quelle raison ? Ellison va tenter de répondre à ces questions tandis que le tueur présumé, une entité surnaturelle présente sur les films, menace de plus en plus sa famille.",
       "tmdbRating": 3.4,
       "addedAt": "2026-06-22T21:05:56.402Z",
-      "reviews": []
+      "reviews": [
+        {
+          "id": "mqppgp779is7k",
+          "rating": 4.5,
+          "author": "Novelist",
+          "comment": "",
+          "date": "2026-06-22T21:06:14.803Z"
+        }
+      ]
     },
     {
       "id": "mqpa2exdbjsvz",
