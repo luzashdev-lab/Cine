@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-06-22T14:09:16.905Z",
+  "updatedAt": "2026-06-22T14:09:40.925Z",
   "movies": [
     {
       "id": "mqpa2i1h6c63z",
@@ -12,6 +12,13 @@
       "tmdbRating": 3.7,
       "addedAt": "2026-06-22T13:55:18.101Z",
       "reviews": [
+        {
+          "id": "mqpaky8hlelps",
+          "rating": 4.5,
+          "author": "SoiZ",
+          "comment": "<3",
+          "date": "2026-06-22T14:09:38.897Z"
+        },
         {
           "id": "mqpae460wbb9s",
           "rating": 4,
