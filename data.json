@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-06-23T13:53:35.868Z",
+  "updatedAt": "2026-06-23T13:54:12.038Z",
   "movies": [
     {
       "id": "mqqpcvw8ysciz",
@@ -12,6 +12,13 @@
       "tmdbRating": 3.2,
       "addedAt": "2026-06-23T13:51:03.032Z",
       "reviews": [
+        {
+          "id": "mqqpgw7jm7hnw",
+          "rating": 4,
+          "author": "soizic",
+          "comment": "Pure 80's",
+          "date": "2026-06-23T13:54:10.063Z"
+        },
         {
           "id": "mqqpdd8fs1b0f",
           "rating": 4,
