@@ -1,7 +1,18 @@
 {
   "version": 2,
-  "updatedAt": "2026-06-23T21:36:12.813Z",
+  "updatedAt": "2026-06-23T21:36:56.354Z",
   "movies": [
+    {
+      "id": "mqr5zz9dwsxst",
+      "tmdbId": 334533,
+      "title": "Captain Fantastic",
+      "year": "2016",
+      "poster": "https://image.tmdb.org/t/p/w500/vjl0ZtqhKUWQ9v6tRl2NL4gNaz6.jpg",
+      "synopsis": "Dans les forêts reculées du nord-ouest des États-Unis, vivant isolé de la société, un père dévoué a consacré sa vie tout entière à faire de ses six jeunes enfants d’extraordinaires adultes. Mais quand le destin frappe sa famille, ils doivent abandonner ce paradis qu’il avait créé pour eux. La découverte du monde extérieur va l’obliger à questionner ses méthodes d’éducation et remettre en cause tout ce qu’il leur a appris.",
+      "tmdbRating": 3.9,
+      "addedAt": "2026-06-23T21:36:54.337Z",
+      "reviews": []
+    },
     {
       "id": "mqqxaqqsvlh3x",
       "tmdbId": 2832,
