@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-06-23T21:37:04.044Z",
+  "updatedAt": "2026-06-23T21:37:17.351Z",
   "movies": [
     {
       "id": "mqr5zz9dwsxst",
@@ -11,7 +11,15 @@
       "synopsis": "Dans les forêts reculées du nord-ouest des États-Unis, vivant isolé de la société, un père dévoué a consacré sa vie tout entière à faire de ses six jeunes enfants d’extraordinaires adultes. Mais quand le destin frappe sa famille, ils doivent abandonner ce paradis qu’il avait créé pour eux. La découverte du monde extérieur va l’obliger à questionner ses méthodes d’éducation et remettre en cause tout ce qu’il leur a appris.",
       "tmdbRating": 3.9,
       "addedAt": "2026-06-23T21:36:54.337Z",
-      "reviews": []
+      "reviews": [
+        {
+          "id": "mqr60fiwljonx",
+          "rating": 4.5,
+          "author": "Novelist",
+          "comment": "",
+          "date": "2026-06-23T21:37:15.417Z"
+        }
+      ]
     },
     {
       "id": "mqqxaqqsvlh3x",
@@ -250,7 +258,7 @@
       ]
     },
     {
-      "id": "mqnvh8x7t4906",
+      "id": "mqnvgqwafe7id",
       "tmdbId": 718821,
       "title": "Twisters",
       "year": "2024",
@@ -363,7 +371,7 @@
       ]
     },
     {
-      "id": "mqnvcrwcxep5b",
+      "id": "mqnvd04ftrg33",
       "tmdbId": 1430077,
       "title": "Hokum",
       "year": "2026",
@@ -389,7 +397,7 @@
       ]
     },
     {
-      "id": "mqnvbww5hdiaw",
+      "id": "mqnvbhwuxf44p",
       "tmdbId": 1008042,
       "title": "La Main",
       "year": "2023",
@@ -448,7 +456,7 @@
       ]
     },
     {
-      "id": "mqnujol44iqgz",
+      "id": "mqnuvstni0v6y",
       "tmdbId": 1390300,
       "title": "Over Your Dead Body",
       "year": "2026",
