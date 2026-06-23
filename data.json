@@ -1,7 +1,18 @@
 {
   "version": 2,
-  "updatedAt": "2026-06-23T17:33:07.257Z",
+  "updatedAt": "2026-06-23T17:33:21.835Z",
   "movies": [
+    {
+      "id": "mqqxaqqsvlh3x",
+      "tmdbId": 2832,
+      "title": "Identity",
+      "year": "2003",
+      "poster": "https://image.tmdb.org/t/p/w500/jSSgqRcLaDLh56t5ko1ywAKq0q9.jpg",
+      "synopsis": "Surpris par un orage, dix personnes se retrouvent par hasard au Golden Palm Hotel, un motel situé en plein désert. Au cours de la nuit, ils se font assassiner les uns après les autres. Pour les survivants, c'est le début d'un terrible cauchemar, chacun soupçonnant l'autre. Peu à peu, ils s'aperçoivent qu'ils ont tous quelque chose en commun. Ils vont devoir chercher, dans la personnalité et la vie de chacun, le mobile du tueur et par déduction trouver l'assassin.",
+      "tmdbRating": 3.6,
+      "addedAt": "2026-06-23T17:33:19.972Z",
+      "reviews": []
+    },
     {
       "id": "mqqpcvw8ysciz",
       "tmdbId": 9618,
