@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-06-23T17:30:37.608Z",
+  "updatedAt": "2026-06-23T17:31:04.728Z",
   "movies": [
     {
       "id": "mqqpcvw8ysciz",
@@ -38,6 +38,13 @@
       "tmdbRating": 3.4,
       "addedAt": "2026-06-22T21:05:56.402Z",
       "reviews": [
+        {
+          "id": "mqqx7szakqkrb",
+          "rating": 3,
+          "author": "Miguel A.",
+          "comment": "Dans la moyenne !",
+          "date": "2026-06-23T17:31:02.902Z"
+        },
         {
           "id": "mqppgp779is7k",
           "rating": 4.5,
