@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-06-23T13:51:04.902Z",
+  "updatedAt": "2026-06-23T13:51:27.404Z",
   "movies": [
     {
       "id": "mqqpcvw8ysciz",
@@ -11,7 +11,15 @@
       "synopsis": "Deux flics que tout oppose sont victimes d'une machination fomentée par un baron de la drogue. Pour se disculper, ils doivent mettre fin aux activités du trafiquant.",
       "tmdbRating": 3.2,
       "addedAt": "2026-06-23T13:51:03.032Z",
-      "reviews": []
+      "reviews": [
+        {
+          "id": "mqqpdd8fs1b0f",
+          "rating": 4,
+          "author": "Novelist",
+          "comment": "",
+          "date": "2026-06-23T13:51:25.503Z"
+        }
+      ]
     },
     {
       "id": "mqppgb02r7va7",
