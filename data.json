@@ -1,7 +1,26 @@
 {
   "version": 2,
-  "updatedAt": "2026-06-25T13:25:26.464Z",
+  "updatedAt": "2026-06-25T13:25:36.945Z",
   "movies": [
+    {
+      "id": "mqtjbhckvskq3",
+      "tmdbId": 587792,
+      "title": "Palm Springs",
+      "year": "2020",
+      "poster": "https://image.tmdb.org/t/p/w500/gnAfqiV7yO3Jq9IntTmwkcaICqc.jpg",
+      "synopsis": "L'insouciant Nyles rencontre la demoiselle d'honneur Sarah lors d'un mariage à Palm Springs. Dès lors, ils commencent une idylle qui ne sera pas de tout repos pour l'un comme pour l'autre.",
+      "tmdbRating": 3.7,
+      "addedAt": "2026-06-25T13:25:18.356Z",
+      "reviews": [
+        {
+          "id": "mqtjbu9gnncad",
+          "rating": 4,
+          "author": "Novelist",
+          "comment": "",
+          "date": "2026-06-25T13:25:35.092Z"
+        }
+      ]
+    },
     {
       "id": "mqr5zz9dwsxst",
       "tmdbId": 334533,
@@ -107,7 +126,7 @@
       ]
     },
     {
-      "id": "mqpa2i1h6c63z",
+      "id": "mqpa2exdbjsvz",
       "tmdbId": 19100,
       "title": "Nos jours heureux",
       "year": "2006",
@@ -246,7 +265,7 @@
       ]
     },
     {
-      "id": "mqnvjvtfgx9hi",
+      "id": "mqnvi5lfjudn8",
       "tmdbId": 670292,
       "title": "The Creator",
       "year": "2023",
@@ -470,7 +489,7 @@
       ]
     },
     {
-      "id": "mqnujol44iqgz",
+      "id": "mqnuvstni0v6y",
       "tmdbId": 1390300,
       "title": "Over Your Dead Body",
       "year": "2026",
