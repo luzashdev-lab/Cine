@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-06-27T21:19:51.285Z",
+  "updatedAt": "2026-06-27T21:20:34.849Z",
   "movies": [
     {
       "id": "mqwv5f1jeg09z",
@@ -11,7 +11,15 @@
       "synopsis": "Ils ont marqué les esprits par leur musique... leurs frasques et leurs excès. The Dirt raconte la fulgurante ascension internationale des Mötley Crüe depuis leurs débuts à Los Angeles. Jeff Tremaine  y montre tout, sans aucune complaisance : le sexe, le glam, le métal, la drogue, la gloire et la décadence.",
       "tmdbRating": 3.7,
       "addedAt": "2026-06-27T21:19:49.351Z",
-      "reviews": []
+      "reviews": [
+        {
+          "id": "mqwv6clqepkmr",
+          "rating": 4,
+          "author": "Novelist",
+          "comment": "",
+          "date": "2026-06-27T21:20:32.846Z"
+        }
+      ]
     },
     {
       "id": "mqwf5irc5bhpj",
