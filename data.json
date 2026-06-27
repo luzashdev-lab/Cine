@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-06-27T13:52:02.247Z",
+  "updatedAt": "2026-06-27T13:52:25.923Z",
   "movies": [
     {
       "id": "mqwf5irc5bhpj",
@@ -11,7 +11,15 @@
       "synopsis": "Le capitaine Riley Hale, pilote d'essai dans l'armée américaine, éprouve une véritable admiration pour le major Vic Deakins, avec lequel il fait équipe.\r Mais ses certitudes volent en éclats le jour où, au cours d'une mission ultra-secrète à bord d'un bombardier furtif B-3 transportant deux missiles à ogives nucléaires opérationnelles, Deakins le menace d'un pistolet et l'éjecte de l'appareil à la limite de l'Utah et de l'Arizona.",
       "tmdbRating": 3,
       "addedAt": "2026-06-27T13:52:00.312Z",
-      "reviews": []
+      "reviews": [
+        {
+          "id": "mqwf6116sxg7j",
+          "rating": 2.5,
+          "author": "novelist",
+          "comment": "",
+          "date": "2026-06-27T13:52:23.994Z"
+        }
+      ]
     },
     {
       "id": "mqtjbhckvskq3",
