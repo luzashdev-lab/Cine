@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-06-27T21:21:40.103Z",
+  "updatedAt": "2026-06-27T21:22:03.750Z",
   "movies": [
     {
       "id": "mqwv5f1jeg09z",
@@ -12,6 +12,13 @@
       "tmdbRating": 3.7,
       "addedAt": "2026-06-27T21:19:49.351Z",
       "reviews": [
+        {
+          "id": "mqwv89cm2pki7",
+          "rating": 4,
+          "author": "Miguel A.",
+          "comment": "Sex drugs and rock n roll",
+          "date": "2026-06-27T21:22:01.942Z"
+        },
         {
           "id": "mqwv6clqepkmr",
           "rating": 4,
