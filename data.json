@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-07-01T21:11:49.257Z",
+  "updatedAt": "2026-07-01T21:12:06.946Z",
   "movies": [
     {
       "id": "mr2kmhsan4dbo",
@@ -11,7 +11,15 @@
       "synopsis": "Et si vous pouviez réaliser votre rêve le plus fou ? Un jeune introverti met la main sur un objet magique capable d’exaucer n’importe quel souhait. Son crush de toujours tombe alors raide dingue de lui… jusqu’à l’obsession la plus totale. Faites attention à ce que vous souhaitez !",
       "tmdbRating": 4.1,
       "addedAt": "2026-07-01T21:11:47.338Z",
-      "reviews": []
+      "reviews": [
+        {
+          "id": "mr2kmvemcovu1",
+          "rating": 4,
+          "author": "Novelist",
+          "comment": "",
+          "date": "2026-07-01T21:12:04.990Z"
+        }
+      ]
     },
     {
       "id": "mqwv5f1jeg09z",
