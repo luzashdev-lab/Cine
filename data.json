@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-07-05T22:09:45.160Z",
+  "updatedAt": "2026-07-05T22:09:58.598Z",
   "movies": [
     {
       "id": "mr8cgefwq5a3n",
@@ -11,7 +11,15 @@
       "synopsis": "Deux anciens Rangers de l'armée sont jumelés contre leur gré lors du road trip de leur vie. Briggs et Lulu, un malinois belge, parcourent la côte du Pacifique pour se rendre à l'heure aux funérailles du maître de Lulu.",
       "tmdbRating": 3.6,
       "addedAt": "2026-07-05T22:09:43.196Z",
-      "reviews": []
+      "reviews": [
+        {
+          "id": "mr8cgovvhaor6",
+          "rating": 3,
+          "author": "Novelist",
+          "comment": "",
+          "date": "2026-07-05T22:09:56.731Z"
+        }
+      ]
     },
     {
       "id": "mr8cfk8w0qpjn",
