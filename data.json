@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-07-05T22:09:06.025Z",
+  "updatedAt": "2026-07-05T22:09:27.054Z",
   "movies": [
     {
       "id": "mr8cfk8w0qpjn",
@@ -11,7 +11,15 @@
       "synopsis": "D’un petit village du sud de l’Iran aux cités parisiennes, Kheiron nous raconte le destin hors du commun de ses parents Hibat et Fereshteh, éternels optimistes, dans une comédie aux airs de conte universel qui évoque l’amour familial, le don de soi et surtout l’idéal d’un vivre-ensemble.",
       "tmdbRating": 3.8,
       "addedAt": "2026-07-05T22:09:04.064Z",
-      "reviews": []
+      "reviews": [
+        {
+          "id": "mr8cg0hrqv22l",
+          "rating": 3.5,
+          "author": "Novelist",
+          "comment": "",
+          "date": "2026-07-05T22:09:25.119Z"
+        }
+      ]
     },
     {
       "id": "mr2kwfv6sukri",
