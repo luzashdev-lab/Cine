@@ -1,7 +1,18 @@
 {
   "version": 2,
-  "updatedAt": "2026-07-12T20:45:03.688Z",
+  "updatedAt": "2026-07-12T20:45:16.284Z",
   "movies": [
+    {
+      "id": "mri9ipuvpmd3t",
+      "tmdbId": 16871,
+      "title": "Jusqu'en enfer",
+      "year": "2009",
+      "poster": "https://image.tmdb.org/t/p/w500/uNiKsNYMBEzNeRePHprI2aiRDyI.jpg",
+      "synopsis": "Christine Brown, spécialiste en crédit immobilier, vit à Los Angeles avec son petit ami, le Professeur Clay Dalton. Tout va pour le mieux jusqu’au jour où la mystérieuse Mme Ganush débarque à la banque et la supplie de lui accorder un crédit supplémentaire pour sa maison. Christine hésite entre la compassion et la pression de son patron, M. Hicks, qui la voudrait plus ferme avant de lui octroyer une promotion. Fatalement, Christine choisit sa carrière, même si sa décision met Mme Ganush à la rue. Pour se venger, la vieille femme jette la malédiction du Lamia sur Christine, transformant sa vie en un véritable cauchemar. Hantée par un esprit malfaisant, incomprise de son petit ami, elle se fait aider du medium Rham Jas, qui l’entraîne dans une course frénétique contre la damnation éternelle, pour inverser le sortilège…",
+      "tmdbRating": 3.2,
+      "addedAt": "2026-07-12T20:45:14.215Z",
+      "reviews": []
+    },
     {
       "id": "mr8cgefwq5a3n",
       "tmdbId": 626735,
