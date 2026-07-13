@@ -1,7 +1,18 @@
 {
   "version": 2,
-  "updatedAt": "2026-07-13T12:44:02.403Z",
+  "updatedAt": "2026-07-13T12:44:39.480Z",
   "movies": [
+    {
+      "id": "mrj7sht7kjux2",
+      "tmdbId": 1301421,
+      "title": "Les Moutons détectives",
+      "year": "2026",
+      "poster": "https://image.tmdb.org/t/p/w500/5GjWHaN6XW9RbeUqqYbzfKSThqX.jpg",
+      "synopsis": "Lorsque son fermier bien-aimé est retrouvé mort dans des circonstances mystérieuses, un troupeau de moutons conclut qu'il devra résoudre le meurtre lui-même. Cette quête l'oblige à quitter son pâturage pour la première fois et à se confronter à une réalité brutale : le monde des humains est bien plus complexe qu'il y paraît dans les livres.",
+      "tmdbRating": 3.9,
+      "addedAt": "2026-07-13T12:44:37.291Z",
+      "reviews": []
+    },
     {
       "id": "mri9ipuvpmd3t",
       "tmdbId": 16871,
