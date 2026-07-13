@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-07-13T21:47:10.812Z",
+  "updatedAt": "2026-07-13T21:47:18.476Z",
   "movies": [
     {
       "id": "mrjr57fehta5m",
@@ -11,7 +11,15 @@
       "synopsis": "Pour sauver son emploi, David accepte un plan foireux : ramener un mystérieux colis d’Amérique du Sud. Il se retrouve à bord d’une croisière avec son ex Tess, son fils Léo, et son collègue Stéphane, aussi benêt que maladroit, dont David se sert pour transporter le colis à sa place. Tout dérape lorsque ce dernier l’ouvre accidentellement : un adorable bébé Marsupilami apparaît et le voyage vire au chaos !",
       "tmdbRating": 3.2,
       "addedAt": "2026-07-13T21:46:23.066Z",
-      "reviews": []
+      "reviews": [
+        {
+          "id": "mrjr6cl78n616",
+          "rating": 3,
+          "author": "soiz",
+          "comment": "dr^le ,mais j étais fatiguée alors j'avais peut être un rire nerveux ^^",
+          "date": "2026-07-13T21:47:16.411Z"
+        }
+      ]
     },
     {
       "id": "mrjr1o7c72hrz",
@@ -350,7 +358,7 @@
       ]
     },
     {
-      "id": "mqpa2exdbjsvz",
+      "id": "mqpa2i1h6c63z",
       "tmdbId": 19100,
       "title": "Nos jours heureux",
       "year": "2006",
@@ -489,7 +497,7 @@
       ]
     },
     {
-      "id": "mqnvi5lfjudn8",
+      "id": "mqnvjvtfgx9hi",
       "tmdbId": 670292,
       "title": "The Creator",
       "year": "2023",
@@ -713,7 +721,7 @@
       ]
     },
     {
-      "id": "mqnuvstni0v6y",
+      "id": "mqnujol44iqgz",
       "tmdbId": 1390300,
       "title": "Over Your Dead Body",
       "year": "2026",
