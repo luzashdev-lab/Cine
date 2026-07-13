@@ -1,7 +1,18 @@
 {
   "version": 2,
-  "updatedAt": "2026-07-13T21:46:10.465Z",
+  "updatedAt": "2026-07-13T21:46:25.075Z",
   "movies": [
+    {
+      "id": "mrjr57fehta5m",
+      "tmdbId": 1145899,
+      "title": "Marsupilami",
+      "year": "2026",
+      "poster": "https://image.tmdb.org/t/p/w500/rJNHFa07Id2ylQgw0ttzGwpeczE.jpg",
+      "synopsis": "Pour sauver son emploi, David accepte un plan foireux : ramener un mystérieux colis d’Amérique du Sud. Il se retrouve à bord d’une croisière avec son ex Tess, son fils Léo, et son collègue Stéphane, aussi benêt que maladroit, dont David se sert pour transporter le colis à sa place. Tout dérape lorsque ce dernier l’ouvre accidentellement : un adorable bébé Marsupilami apparaît et le voyage vire au chaos !",
+      "tmdbRating": 3.2,
+      "addedAt": "2026-07-13T21:46:23.066Z",
+      "reviews": []
+    },
     {
       "id": "mrjr1o7c72hrz",
       "tmdbId": 614945,
