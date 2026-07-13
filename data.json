@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-07-13T12:44:49.383Z",
+  "updatedAt": "2026-07-13T12:45:29.064Z",
   "movies": [
     {
       "id": "mrj7sht7kjux2",
@@ -11,7 +11,15 @@
       "synopsis": "Lorsque son fermier bien-aimé est retrouvé mort dans des circonstances mystérieuses, un troupeau de moutons conclut qu'il devra résoudre le meurtre lui-même. Cette quête l'oblige à quitter son pâturage pour la première fois et à se confronter à une réalité brutale : le monde des humains est bien plus complexe qu'il y paraît dans les livres.",
       "tmdbRating": 3.9,
       "addedAt": "2026-07-13T12:44:37.291Z",
-      "reviews": []
+      "reviews": [
+        {
+          "id": "mrj7tjrfnxeg7",
+          "rating": 4,
+          "author": "soizic",
+          "comment": "Bon ok c’est mignon tout plein . Le roi lion version mouton . \nPrintanier , coloré et émouvant",
+          "date": "2026-07-13T12:45:26.475Z"
+        }
+      ]
     },
     {
       "id": "mri9ipuvpmd3t",
