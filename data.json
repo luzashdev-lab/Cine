@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-07-14T21:10:58.862Z",
+  "updatedAt": "2026-07-14T21:11:25.610Z",
   "movies": [
     {
       "id": "mrjrh5ldjwva3",
@@ -12,6 +12,13 @@
       "tmdbRating": 3.2,
       "addedAt": "2026-07-13T21:55:40.561Z",
       "reviews": [
+        {
+          "id": "mrl5c28dudxkf",
+          "rating": 3.5,
+          "author": "novelist",
+          "comment": "",
+          "date": "2026-07-14T21:11:23.725Z"
+        },
         {
           "id": "mrjrhgmsc81ey",
           "rating": 4,
