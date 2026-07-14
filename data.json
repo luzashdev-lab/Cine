@@ -1,7 +1,18 @@
 {
   "version": 2,
-  "updatedAt": "2026-07-14T23:32:10.020Z",
+  "updatedAt": "2026-07-14T23:32:20.551Z",
   "movies": [
+    {
+      "id": "mrlada0yj5e20",
+      "tmdbId": 1304313,
+      "title": "Le Réveil de la Momie",
+      "year": "2026",
+      "poster": "https://image.tmdb.org/t/p/w500/f77yGBGOjainowvlGHU70CCQrjV.jpg",
+      "synopsis": "Une jeune fille disparue dans le désert égyptien réapparaît mystérieusement huit ans plus tard. Mais les retrouvailles tournent vite au cauchemar. Alors que son comportement devient de plus en plus inquiétant, sa famille se lance dans une course contre la montre pour comprendre l’origine du mal. Ce qu’ils vont découvrir dépasse tout ce qu’ils imaginaient.",
+      "tmdbRating": 4,
+      "addedAt": "2026-07-14T23:32:18.562Z",
+      "reviews": []
+    },
     {
       "id": "mrjrh5ldjwva3",
       "tmdbId": 617,
