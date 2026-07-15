@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-07-15T11:21:43.294Z",
+  "updatedAt": "2026-07-15T11:23:43.413Z",
   "movies": [
     {
       "id": "mrlada0yj5e20",
@@ -12,6 +12,13 @@
       "tmdbRating": 4,
       "addedAt": "2026-07-14T23:32:18.562Z",
       "reviews": [
+        {
+          "id": "mrlzs4c57haen",
+          "rating": 3.5,
+          "author": "Miguel A.",
+          "comment": "Le film parvient à offrir plusieurs séquences efficaces qui plairont aux amateurs d'horreur. Une expérience correcte, sans être inoubliable.",
+          "date": "2026-07-15T11:23:41.429Z"
+        },
         {
           "id": "mrladqbv882sr",
           "rating": 2.5,
