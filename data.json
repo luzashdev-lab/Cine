@@ -1,7 +1,18 @@
 {
   "version": 2,
-  "updatedAt": "2026-07-19T21:35:23.921Z",
+  "updatedAt": "2026-07-19T21:35:37.970Z",
   "movies": [
+    {
+      "id": "mrsbeg7kjw6k0",
+      "tmdbId": 940721,
+      "title": "Godzilla Minus One",
+      "year": "2023",
+      "poster": "https://image.tmdb.org/t/p/w500/tBzOqSc51CiUeOlxW2unvYVBU8v.jpg",
+      "synopsis": "La guerre est finie, mais le combat est loin d'être terminé pour Shikishima, pilote rongé par la culpabilité. Peut-il se pardonner et aider à sauver le Japon de la furie de Godzilla ?",
+      "tmdbRating": 3.8,
+      "addedAt": "2026-07-19T21:35:36.080Z",
+      "reviews": []
+    },
     {
       "id": "mrlada0yj5e20",
       "tmdbId": 1304313,
