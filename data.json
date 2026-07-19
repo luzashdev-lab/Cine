@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-07-19T21:35:37.970Z",
+  "updatedAt": "2026-07-19T21:35:55.162Z",
   "movies": [
     {
       "id": "mrsbeg7kjw6k0",
@@ -11,7 +11,15 @@
       "synopsis": "La guerre est finie, mais le combat est loin d'être terminé pour Shikishima, pilote rongé par la culpabilité. Peut-il se pardonner et aider à sauver le Japon de la furie de Godzilla ?",
       "tmdbRating": 3.8,
       "addedAt": "2026-07-19T21:35:36.080Z",
-      "reviews": []
+      "reviews": [
+        {
+          "id": "mrsbetg4zzmg9",
+          "rating": 3.5,
+          "author": "KOICHIC",
+          "comment": "COOL",
+          "date": "2026-07-19T21:35:53.236Z"
+        }
+      ]
     },
     {
       "id": "mrlada0yj5e20",
