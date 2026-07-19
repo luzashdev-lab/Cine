@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-07-19T21:36:08.778Z",
+  "updatedAt": "2026-07-19T21:37:17.796Z",
   "movies": [
     {
       "id": "mrsbeg7kjw6k0",
@@ -12,6 +12,13 @@
       "tmdbRating": 3.8,
       "addedAt": "2026-07-19T21:35:36.080Z",
       "reviews": [
+        {
+          "id": "mrsbgl4mo3sz0",
+          "rating": 4,
+          "author": "Novelist san",
+          "comment": "",
+          "date": "2026-07-19T21:37:15.766Z"
+        },
         {
           "id": "mrsbetg4zzmg9",
           "rating": 3.5,
