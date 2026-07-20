@@ -1,7 +1,18 @@
 {
   "version": 2,
-  "updatedAt": "2026-07-20T23:12:28.858Z",
+  "updatedAt": "2026-07-20T23:12:40.846Z",
   "movies": [
+    {
+      "id": "mrtub3uglksvu",
+      "tmdbId": 1408208,
+      "title": "Exit 8",
+      "year": "2025",
+      "poster": "https://image.tmdb.org/t/p/w500/hJ9qCQ3Dx9vwet09Lbqs8eZTd8e.jpg",
+      "synopsis": "Un homme piégé dans un couloir de métro cherche la sortie numéro 8. Pour la trouver, il faut traquer les anomalies. S’il en voit une, il fait demi-tour. S’il n’en voit aucune, il continue. Mais s’il se trompe, il est renvoyé à son point de départ. Parviendra-t-il à sortir de ce couloir sans fin ?",
+      "tmdbRating": 3.5,
+      "addedAt": "2026-07-20T23:12:38.968Z",
+      "reviews": []
+    },
     {
       "id": "mrsbeg7kjw6k0",
       "tmdbId": 940721,
