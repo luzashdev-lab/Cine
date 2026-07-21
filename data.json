@@ -1,7 +1,18 @@
 {
   "version": 2,
-  "updatedAt": "2026-07-21T00:47:41.493Z",
+  "updatedAt": "2026-07-21T00:47:58.549Z",
   "movies": [
+    {
+      "id": "mrtxpnnietvct",
+      "tmdbId": 1273221,
+      "title": "Scary Movie",
+      "year": "2026",
+      "poster": "https://image.tmdb.org/t/p/w500/gIComZ1TfZdWmuD4L4mJ8sEv0km.jpg",
+      "synopsis": "Vingt-six ans après avoir échappé à un tueur masqué étrangement familier, les héros emblématiques de la saga sont de nouveau dans la ligne de mire du meurtrier, et aucune franchise de film d’horreur n’est à l’abri.",
+      "tmdbRating": 3,
+      "addedAt": "2026-07-21T00:47:56.670Z",
+      "reviews": []
+    },
     {
       "id": "mrtub3uglksvu",
       "tmdbId": 1408208,
