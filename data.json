@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-07-21T00:47:58.549Z",
+  "updatedAt": "2026-07-21T00:48:21.783Z",
   "movies": [
     {
       "id": "mrtxpnnietvct",
@@ -11,7 +11,15 @@
       "synopsis": "Vingt-six ans après avoir échappé à un tueur masqué étrangement familier, les héros emblématiques de la saga sont de nouveau dans la ligne de mire du meurtrier, et aucune franchise de film d’horreur n’est à l’abri.",
       "tmdbRating": 3,
       "addedAt": "2026-07-21T00:47:56.670Z",
-      "reviews": []
+      "reviews": [
+        {
+          "id": "mrtxq5i9mpgt6",
+          "rating": 0.5,
+          "author": "Novelist",
+          "comment": "a chier",
+          "date": "2026-07-21T00:48:19.809Z"
+        }
+      ]
     },
     {
       "id": "mrtub3uglksvu",
